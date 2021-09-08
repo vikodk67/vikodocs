@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>VIKO DOCS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+	
+	<style>
+	body {
+	background-color: #00a3a8;
+	}
+	h4 {
+	font-family: "ＭＳ Ｐゴシック";
+	color: #ffffff;
+	}
+	h1 {
+	font-size: 100px;
+	font-family: "ＭＳ Ｐゴシック";
+	color: #ffffff;
+	}
+	body {
+  position: absolute;
+  left: 340px;
+  top: 200px;
+    }
+	p {
+  position: absolute;
+  left: 120px;
+  top: 151px;
+  color: #a6ffed;
+  font-family: "fangsong";
+    }
+	a {
+  position: absolute;
+  left: 210px;
+  top: 170px;
+  color: #a6ffed;
+  font-family: "fangsong";
+    }
+	</style>
+</head>
+<body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
+</body>
+</html>
+
+<header>
+<script>
+function clicked() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/vikoapi-index.herokuapp.com/awesomeclick");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('visits').innerText = `- DOCS API ${this.response.value} `
+    }
+    xhr.send();
+}
+</script>
+    <div>
+    <h1>REST-API</h1>
+    <p onclick="clicked()">BY VIKO</p><a href="http://viko-api.herokuapp.com/docs" id="visits"></a><br>
+	</div>
+</header>
+</html>
