@@ -115,7 +115,7 @@ def spamcall():
         no = request.args.get('no')
         if str(no).startswith('8'):
             hasil = ''
-            kyaa = post('https://id.jagreward.com/member/verify-mobile/%s' % no).json()
+            kyaa = post('https://id.jagreward.com/member/verify-mobile/' % no).json()
             print(kyaa['message'])
             if 'Anda akan menerima' in kyaa['message']:
                 hasil += '[!] Berhasil mengirim spam call ke nomor : 62%s' % no
