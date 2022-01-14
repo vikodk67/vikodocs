@@ -578,17 +578,7 @@ def cuaca():
 					},
 					'creator': 'Mhank BarBar'
 				}
-		except Exception as e:
-			print('Error : %s' % e)
-			return {
-				'status': False,
-				'msg': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
-			}
-	else:
-		return {
-			'status': False,
-			'msg': '[!] Masukkan parameter q'
-		}
+	
 
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
