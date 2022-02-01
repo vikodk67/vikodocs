@@ -3,7 +3,6 @@ from lib.dewa import cari
 from lib.anime import *
 from lib.brainly import *
 from lib.manga import *
-from lib.search import *
 from lib.nulis import *
 from urllib.parse import *
 from flask import *
