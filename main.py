@@ -579,7 +579,6 @@ def cuaca():
 					'creator': 'Mhank BarBar'
 				}
 	
-
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
 	if request.args.get('username'):
