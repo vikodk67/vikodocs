@@ -3,6 +3,8 @@ from lib.dewa import cari
 from lib.anime import *
 from lib.brainly import *
 from lib.manga import *
+from lib.resize import *
+from lib.search import *
 from lib.nulis import *
 from urllib.parse import *
 from flask import *
@@ -115,7 +117,7 @@ def spamcall():
         no = request.args.get('no')
         if str(no).startswith('8'):
             hasil = ''
-            kyaa = post('https://id.jagreward.com/member/verify-mobile/' % no).json()
+            kyaa = post('https://id.jagreward.com/member/verify-mobile/%s' % no).json()
             print(kyaa['message'])
             if 'Anda akan menerima' in kyaa['message']:
                 hasil += '[!] Berhasil mengirim spam call ke nomor : 62%s' % no
@@ -578,7 +580,18 @@ def cuaca():
 					},
 					'creator': 'Mhank BarBar'
 				}
-	
+		except Exception as e:
+			print('Error : %s' % e)
+			return {
+				'status': False,
+				'msg': '[❗] Gagal mengambil informasi cuaca, mungkin tempat tidak terdaftar/salah!'
+			}
+	else:
+		return {
+			'status': False,
+			'msg': '[!] Masukkan parameter q'
+		}
+
 @app.route('/api/stalk', methods=['GET','POST'])
 def stalk():
 	if request.args.get('username'):
@@ -712,6 +725,9 @@ def quotesnimerandom():
 			'anime': quotesnime['anime']
 		}
 	}
+@app.route('/api', methods=['GET','POST'])
+def api():
+	return render_template('api.html')
 
 @app.route('/', methods=['GET','POST'])
 def index():
