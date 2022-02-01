@@ -596,7 +596,6 @@ def stalk():
 				'Jumlah_Followers': igestalk_[3].text.replace('\n',' ').strip(),
 				'Jumlah_Following': igestalk_[4].text.replace('\n',' ').strip(),
 				'Biodata': igestalk.find('p').text.strip(),
-				'Profile_pic': thumb
 			}
 		except Exception as e:
 			print(e)
