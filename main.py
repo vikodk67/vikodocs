@@ -596,6 +596,7 @@ def stalk():
 				'Jumlah_Followers': igestalk_[3].text.replace('\n',' ').strip(),
 				'Jumlah_Following': igestalk_[4].text.replace('\n',' ').strip(),
 				'Biodata': igestalk.find('p').text.strip(),
+				'tumbn': thumb
 			}
 		except Exception as e:
 			print(e)
@@ -603,7 +604,7 @@ def stalk():
 				'status': False,
 				'error': '[❗] Username salah!!'
 			}
-	else:
+	 else:
 		return {
 			'status': False,
 			'msg': '[!] Masukkan parameter username'
